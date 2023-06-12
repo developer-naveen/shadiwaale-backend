@@ -1,19 +1,28 @@
 const  mongoose  = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-    name:{
+    firstname:{
         type: String,
         required: true
     },
-    whatsAppNumber:{
-        type: Number,
+    lastname:{
+        type: String,
         required: true
     },
-    address:{
+    mobile:{
+        type:Number,
+        required: true
+    },
+    city:{
         type:String,
         required: true
+    },
+    email:{
+        type:String,
+       
     }
-})
+},
+{timestamps:true})
 
 const User = mongoose.model("User", userSchema,)
 
