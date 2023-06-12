@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 
 const route = require('./route/route.js');
 
@@ -10,10 +11,32 @@ const app = express();
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use(cors())
+
+
+
+
+
+
+
+
+
+
+app.use('/', route);
+
+
+
+
+
+
+
+
+
+
+
+
+
 const mongodb_url = "mongodb+srv://naveen-developer:DfQ4znho2woWbAqB@naveen-developer.gszoxjk.mongodb.net/shadiwaaleUser"
-
-
-
 
 mongoose.connect(mongodb_url, {useNewUrlParser: true,useUnifiedTopology: true}).then(()=>{
     console.log("Hi! MongoDB is connected Now ");
@@ -21,11 +44,6 @@ mongoose.connect(mongodb_url, {useNewUrlParser: true,useUnifiedTopology: true}).
     console.log("Sorry! MongoDB is not connected");
     console.log(error);
 });
-
-
-
-app.use('/', route);
-
 
 const listenPort = process.env.PORT || 5000;
 

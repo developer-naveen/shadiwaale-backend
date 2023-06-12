@@ -8,7 +8,7 @@
         // console.log(userData);
 
         finalData = await userModel.create(userData)
-        res.status(201).send({
+        return res.status(201).send({
             status: 'success',
             data: finalData
         })
