@@ -9,7 +9,7 @@
 
         finalData = await userModel.create(userData)
         return res.status(201).send({
-            status: 'success',
+            status: 'successful',
             data: finalData
         })
     }
