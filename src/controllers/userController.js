@@ -5,13 +5,20 @@
     try{
         const userData = req.body
 
+    const uniqueMobile = await userModel.findOne({mobile: userData.mobile})
+
+     if(uniqueMobile){
+        return res.status(403).send({status: "false", message: "this mobile is already registered with someone profile!"})
+     }
+
+
+
         // console.log(userData);
 
         finalData = await userModel.create(userData)
-        return res.status(201).send({
-            status: 'successful',
-            data: finalData
-        })
+        res.status(201).send({status: true, message:"Registration successfully"});
+        
+       
     }
     catch(err){
 
