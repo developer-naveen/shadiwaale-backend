@@ -26,16 +26,6 @@ app.use('/', route);
 
 
 
-
-
-
-
-
-
-
-
-
-
 const mongodb_url = "mongodb+srv://naveen-developer:DfQ4znho2woWbAqB@naveen-developer.gszoxjk.mongodb.net/shadiwaaleUser"
 
 mongoose.connect(mongodb_url, {useNewUrlParser: true,useUnifiedTopology: true}).then(()=>{
